@@ -4,7 +4,8 @@ require('dotenv').config();
 exports.handler = async function(event, context) {
     let q, from, to;
 
-    console.warn(await event);
+    console.warn("TESTING HERE");
+    console.warn(await event.queryStringParameters);
 
     try {
         const requestBody = JSON.parse(event.body);
