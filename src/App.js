@@ -7,7 +7,7 @@ function App() {
   const recipe = () => {
     const options = {
       method: 'GET',
-      url: 'http://localhost:8000/search',
+      url: '/.netlify/functions/search',
       params: {
         q: "grilled cheese",
         from: 0,
