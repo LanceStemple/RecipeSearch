@@ -2,7 +2,20 @@ const axios = require('axios');
 require('dotenv').config();
 
 exports.handler = async function(event, context) {
-    const { q, from, to } = JSON.parse(event.body);
+    let q, from, to;
+
+    try {
+        const requestBody = JSON.parse(event.body);
+        q = requestBody.q;
+        from = requestBody.from;
+        to = requestBody.to;
+    } catch (error) {
+        console.error("Error parsing request body:", error);
+        return {
+            statusCode: 400, // Bad Request
+            body: JSON.stringify({ error: 'Invalid request body' })
+        };
+    }
 
     const options = {
         method: 'GET',
