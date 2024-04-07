@@ -5,7 +5,6 @@ exports.handler = async function(event, context) {
     let q, from, to;
 
     console.warn(await event);
-    console.warn(await event.json());
 
     try {
         const requestBody = JSON.parse(event.body);
