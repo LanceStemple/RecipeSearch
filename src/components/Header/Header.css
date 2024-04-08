@@ -1,3 +1,26 @@
 .header{
-    height: 100px;
+    height: 175px;
+    background-color: #0E3B43;
+}
+
+img{
+    margin-left: 2%;
+}
+
+.header h2{
+    font-size: 40px;
+    margin-left: 20px;
+}
+
+.header nav{
+    font-size: 32px;
+    margin-right: 2%;
+}
+
+.active{
+    text-decoration: underline;
+}
+
+.inactive{
+    text-decoration: none !important;
 }

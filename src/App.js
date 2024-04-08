@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header activeNavItem="search"/>
       <h2 className='label'>LABEL</h2>
       <h2 className='url'>URL</h2>
       <button onClick={() => getRecipe({ q: 'grilled cheese', to: 1 })}>recipe</button> 

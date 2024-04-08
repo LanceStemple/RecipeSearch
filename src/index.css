@@ -1,7 +1,7 @@
 body{
-  margin: 0px;
-}
-
-*{
-  margin: 0px;
+  margin: 0 !important;
+  background: #A3BBAD !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
