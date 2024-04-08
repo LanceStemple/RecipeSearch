@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.handler = async (event) => {
-    const { q, from, to } = JSON.parse(event.body);
+    const { q, to } = JSON.parse(event.body);
 
     const options = {
         method: 'GET',
@@ -12,7 +12,7 @@ exports.handler = async (event) => {
         },
         params: {
             "q": q,
-            "from": from,
+            "from": 0,
             "to": to,
             "app_id": process.env.RECIPE_API_ID,
             "app_key": process.env.RECIPE_API_KEY
