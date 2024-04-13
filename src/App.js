@@ -29,18 +29,23 @@ function Search({headerText, left}) {
     <div className="outer-box d-flex flex-column" style={{ ...marginValue }}>
       <div className="headers text-white text-decoration-underline">{headerText}</div>
       <div className="inner-box">
-      </div>
-      <div className="inner-box">
-      </div>
-      <div className="inner-box">
-      </div>
-      <div className="inner-box">
-      </div>
-      <div className="inner-box">
-      </div>
-      <div className="inner-box">
-      </div>
-      <div className="inner-box">
+      <form className='d-flex h-100 align-items-center flex-column'>
+        <label>
+          <div className='d-flex flex-column mb-2'>
+            Recipe Name:
+            <input type="text" name="name" />
+          </div>
+        </label>
+        <label>
+          <div className='d-flex flex-column mb-2'>
+            Number of Results:
+            <input type="email" name="email" />
+          </div>
+        </label>
+        <div className='d-flex mt-auto justify-content-end'>
+          <button className="search-button text-white" type="submit">Search For Recipes</button>
+        </div>
+      </form>
       </div>
     </div>
   );
