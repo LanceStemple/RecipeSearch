@@ -1,4 +1,5 @@
 import './Header.css';
+
 import logo from '../../assets/Ellipse 1.png'
 
 function Header( {activeNavItem} ){

@@ -1,14 +1,14 @@
+.headers {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
 .outer-box {
     padding: 25px;
     background: #312509;
     height: 745px;
     width: 510px;
     text-align: center;
-}
-  
-.headers {
-    font-size: 32px;
-    margin-bottom: 10px;
 }
   
 .inner-box {
@@ -19,11 +19,4 @@
     background: lightgray;
     text-align: left;
     overflow-y: auto;
-}
-
-.search-button{
-    background: #357266;
-    border-radius: 15px;
-    border-color: transparent;
-    height: 80px;
 }
