@@ -1,1 +1,22 @@
-
+.outer-box {
+    padding: 25px;
+    background: #312509;
+    height: 745px;
+    width: 510px;
+    text-align: center;
+}
+  
+.headers {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+  
+.inner-box {
+    flex: 1;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 28px;
+    background: lightgray;
+    text-align: left;
+    overflow-y: auto;
+}
