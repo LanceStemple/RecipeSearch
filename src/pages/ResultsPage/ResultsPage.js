@@ -7,25 +7,11 @@ function ResultsPage() {
   const location = useLocation();
   const [recipes, setRecipes] = useState([]);
 
-  const result = location.state ? location.state.result : null;
-
   useEffect(() => {
     if (location.state && location.state.result) {
       setRecipes(location.state.result.hits.map(hit => hit.recipe));
     }
   }, [location.state]);
-
-  function setRecipe(result) {
-    let labels = []
-    result.hits.forEach((hit) =>{
-      labels.push(hit.recipe.label);
-    });
-
-    let urls = []
-    result.hits.forEach((hit) =>{
-      urls += hit.recipe.url;
-    });
-  }
 
   return (
     <div>
