@@ -17,7 +17,7 @@ function ResultsPage() {
 
   return (
     <div>
-        <Header activeNavItem="search" headerText="Results"/>
+        <Header headerText="Results"/>
         <div className='results-component'>
             <table className='w-100 mt-4 ms-4'>
               <thead>
@@ -31,7 +31,7 @@ function ResultsPage() {
                 {recipes.map((recipe, index) => (
                 <tr key={index}>
                   <td>{recipe.label}</td>
-                  <td><img src={recipe.image}></img></td>
+                  <td><img src={recipe.image} alt="recipe"></img></td>
                   <td><a href={recipe.url} target="_blank" rel="noopener noreferrer">{recipe.url}</a></td>
                 </tr>
               ))}
