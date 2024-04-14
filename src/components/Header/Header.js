@@ -9,8 +9,8 @@ function Header( {activeNavItem, headerText} ){
             <h2 className="text-white justify-content-start">{headerText}</h2>
             <nav className="d-flex w-100 justify-content-end text-white gap-4">
                 <a className={`text-white ${activeNavItem === 'search' ? 'active' : 'inactive'}`} href="/">Search</a>
-                <a className={`text-white ${activeNavItem === 'myRecipes' ? 'active' : 'inactive'}`} href="/">My Recipes</a>
-                <a className={`text-white ${activeNavItem === 'popular' ? 'active' : 'inactive'}`} href="/">Popular</a>
+                <a className={`text-white ${activeNavItem === 'myRecipes' ? 'active' : 'inactive'}`} href="/myRecipes">My Recipes</a>
+                <a className={`text-white ${activeNavItem === 'popular' ? 'active' : 'inactive'}`} href="/popular">Popular</a>
             </nav>
         </div>
     )
