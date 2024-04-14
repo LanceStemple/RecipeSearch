@@ -1,3 +1,5 @@
+import './ResultsPage.css';
+
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -16,11 +18,12 @@ function ResultsPage() {
   return (
     <div>
         <Header activeNavItem="search"/>
-        <div>
+        <div className='results-component'>
             <table className='w-100'>
               <thead>
                 <tr>
                   <th>Label</th>
+                  <th>Image</th>
                   <th>URL</th>
                 </tr>
               </thead>
@@ -28,6 +31,7 @@ function ResultsPage() {
                 {recipes.map((recipe, index) => (
                 <tr key={index}>
                   <td>{recipe.label}</td>
+                  <td><img src={recipe.image}></img></td>
                   <td><a href={recipe.url} target="_blank" rel="noopener noreferrer">{recipe.url}</a></td>
                 </tr>
               ))}
