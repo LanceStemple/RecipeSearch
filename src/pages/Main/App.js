@@ -8,7 +8,7 @@ import SearchBox from '../../components/SearchBox/SearchBox.js';
 function App() {
   return (
     <div>
-      <Header activeNavItem="search"/>
+      <Header activeNavItem="search" headerText="Search For Recipes"/>
       <div className='d-flex justify-content-between mt-5'>
         <InstructionsBox headerText="Search For Your Perfect Recipe!" left></InstructionsBox>
         <SearchBox headerText="Specify Your Recipe"></SearchBox>

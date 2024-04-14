@@ -17,9 +17,9 @@ function ResultsPage() {
 
   return (
     <div>
-        <Header activeNavItem="search"/>
+        <Header activeNavItem="search" headerText="Results"/>
         <div className='results-component'>
-            <table className='w-100'>
+            <table className='w-100 mt-4 ms-4'>
               <thead>
                 <tr>
                   <th>Label</th>
