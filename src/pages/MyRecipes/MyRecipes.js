@@ -16,8 +16,34 @@ function MyRecipes() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setUser(session?.user);
+
+      const { data: authListener } = supabase.auth.onAuthStateChange(
+        (event, session) => {
+          switch (event) {
+            case "SIGNED_IN":
+              setUser(session?.user);
+              break;
+            case "SIGNED_OUT":
+              setUser(null);
+              break;
+            default:
+              break;
+          }
+        }
+      );
+
+      return () => {
+        authListener.unsubscribe();
+      };
+    };
+    fetchData();
     getMyRecipes();
-  }, []);
+  }, [setUser]);
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -31,7 +57,7 @@ function MyRecipes() {
 
   const getMyRecipes = async () => {
     const res = await supabase.from("myRecipes").select("*");
-
+    console.warn(res.data);
     setMyRecipes(res.data);
     setError(res.error);
   };
@@ -43,9 +69,7 @@ function MyRecipes() {
       .eq("recipe_name", recipe_name)
       .single();
     if (!res.error) {
-      setMyRecipes((currentRecipe) =>
-        currentRecipe.filter((recipe) => recipe.recipe_name === recipe_name)
-      );
+      getMyRecipes();
     } else {
       setError(res.error);
     }
@@ -55,7 +79,7 @@ function MyRecipes() {
     <div>
       <Header activeNavItem="myRecipes" headerText="My Recipes" />
       {user ? (
-        <div>
+        <div className="d-flex align-items-center flex-column">
           <h1>Authenticated</h1>
           {myRecipes.map((value, index) => {
             return (
@@ -71,7 +95,10 @@ function MyRecipes() {
           <button onClick={() => logout()}>Logout</button>
         </div>
       ) : (
-        <button onClick={routeChange}>Login here</button>
+        <div className="d-flex align-items-center flex-column">
+          <h2>You don't seem to be logged in!</h2>
+          <button onClick={routeChange}>Login here</button>
+        </div>
       )}
     </div>
   );
