@@ -1,10 +1,15 @@
-const { createClient } = require("@supabase/supabase-js");
+import { createClient } from "@supabase/supabase-js";
 
-// Initialize the Supabase client
-console.warn(process.env.SUPABASE_URL);
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
+export async function getSupabaseConfig() {
+  const response = await fetch("/.netlify/functions/login");
+  const { supabaseUrl, supabaseKey } = await response.json();
+  return { supabaseUrl, supabaseKey };
+}
 
-module.exports = supabase;
+export async function initializeSupabase() {
+  const { supabaseUrl, supabaseKey } = await getSupabaseConfig();
+  return createClient(supabaseUrl, supabaseKey);
+}
+
+// Export supabase client as a constant
+export const supabase = await initializeSupabase();
