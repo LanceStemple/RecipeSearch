@@ -45,14 +45,37 @@ function ResultsPage() {
     fetchData();
   }, [location.state, setUser]);
 
-  const saveRecipe = async (recipe_name, recipe_url) => {
+  const saveRecipe = async (recipe_name, recipe_url, recipe_img) => {
     if (user) {
-      const res = await supabase.from("myRecipes").insert({
+      // Check if the recipe already exists for the user
+      const { data: existingRecipes, error } = await supabase
+        .from("myRecipes")
+        .select("*")
+        .eq("recipe_name", recipe_name)
+        .eq("user_id", user.id);
+
+      if (error) {
+        console.error("Error checking existing recipes:", error.message);
+        // Handle error appropriately
+        return;
+      }
+
+      // If there are existing recipes for the user with the same name, don't insert
+      if (existingRecipes && existingRecipes.length > 0) {
+        console.log("Recipe already exists for this user.");
+        // Handle this case if needed
+        return;
+      }
+
+      // Insert the recipe if it doesn't exist for the user
+      await supabase.from("myRecipes").insert({
         recipe_name: recipe_name,
         recipe_url: recipe_url,
+        recipe_img: recipe_img,
         user_id: user.id,
       });
     } else {
+      // Handle case when user is not signed in
       // stuff about not being signed in here
     }
   };
@@ -87,7 +110,11 @@ function ResultsPage() {
                   </a>
                 </td>
                 <td>
-                  <button onClick={() => saveRecipe(recipe.label, recipe.url)}>
+                  <button
+                    onClick={() =>
+                      saveRecipe(recipe.label, recipe.url, recipe.image)
+                    }
+                  >
                     Save To My Recipes
                   </button>
                 </td>

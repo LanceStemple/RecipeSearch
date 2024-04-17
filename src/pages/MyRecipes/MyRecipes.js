@@ -57,7 +57,6 @@ function MyRecipes() {
 
   const getMyRecipes = async () => {
     const res = await supabase.from("myRecipes").select("*");
-    console.warn(res.data);
     setMyRecipes(res.data);
     setError(res.error);
   };
@@ -77,29 +76,58 @@ function MyRecipes() {
 
   return (
     <div>
-      <Header activeNavItem="myRecipes" headerText="My Recipes" />
-      {user ? (
-        <div className="d-flex align-items-center flex-column">
-          <h1>Authenticated</h1>
-          {myRecipes.map((value, index) => {
-            return (
-              <div key={index}>
-                <h2>{value.recipe_name}</h2>
-                <a href={value.recipe_url}>{value.recipe_url}</a>
-                <button onClick={() => handleDelete(value.recipe_name)}>
-                  Delete
-                </button>
-              </div>
-            );
-          })}
-          <button onClick={() => logout()}>Logout</button>
-        </div>
-      ) : (
-        <div className="d-flex align-items-center flex-column">
-          <h2>You don't seem to be logged in!</h2>
-          <button onClick={routeChange}>Login here</button>
-        </div>
-      )}
+      <Header headerText="My Recipes" activeNavItem="myRecipes" />
+      <div className="d-flex justify-content-center">
+        {user ? (
+          <div className="d-flex flex-column align-items-center">
+            <h1 className="text-decoration-underline">My Recipes</h1>
+            {myRecipes.length > 0 ? (
+              <table className="myRecipesComponent w-100 mt-4">
+                <thead>
+                  <tr>
+                    <th>Recipe Name</th>
+                    <th>Image</th>
+                    <th>Recipe URL</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {myRecipes.map((value, index) => (
+                    <tr key={index}>
+                      <td>{value.recipe_name}</td>
+                      <td>
+                        <img alt="recipe" src={value.recipe_img}></img>
+                      </td>
+                      <td>
+                        <a href={value.recipe_url}>{value.recipe_url}</a>
+                      </td>
+                      <td>
+                        <button onClick={() => handleDelete(value.recipe_name)}>
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <h2>You don't have any recipes yet!</h2>
+            )}
+            <div className="mt-auto mb-4">
+              <button onClick={() => logout()} className="btn btn-danger">
+                Logout
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="d-flex flex-column align-items-center">
+            <h2>You don't seem to be logged in!</h2>
+            <button onClick={routeChange} className="btn btn-primary">
+              Login here
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
