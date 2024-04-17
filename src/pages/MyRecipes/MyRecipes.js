@@ -99,7 +99,13 @@ function MyRecipes() {
                         <img alt="recipe" src={value.recipe_img}></img>
                       </td>
                       <td>
-                        <a href={value.recipe_url}>{value.recipe_url}</a>
+                        <a
+                          href={value.recipe_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {value.recipe_url}
+                        </a>
                       </td>
                       <td>
                         <button onClick={() => handleDelete(value.recipe_name)}>
