@@ -84,7 +84,7 @@ function ResultsPage() {
     <div>
       <Header headerText="Results" />
       <div className="results-component">
-        <table className="w-100 mt-4 ms-4">
+        <table className="mt-4 ms-4">
           <thead>
             <tr>
               <th>Label</th>

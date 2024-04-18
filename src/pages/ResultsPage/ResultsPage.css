@@ -1,10 +1,17 @@
+.results-component {
+    overflow-x: auto;
+    max-width: 100%;
+    width: min(100vw, calc(100% - 40px));
+    margin: auto;
+}
+
 .results-component img{
-    width: 200px;
-    height: 200px;
+    width: min(20vw,200px);
+    height: min(20vw,200px);
 }
 
 .results-component table{
-    font-size: 24px;
+    font-size: min(2.4vw,24px);
     border-spacing: 50px;
 }
 

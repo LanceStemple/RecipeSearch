@@ -77,12 +77,12 @@ function MyRecipes() {
   return (
     <div>
       <Header headerText="My Recipes" activeNavItem="myRecipes" />
-      <div className="d-flex justify-content-center">
+      <div className="">
         {user ? (
-          <div className="d-flex flex-column align-items-center">
+          <div className="myRecipesComponent">
             <h1 className="text-decoration-underline">My Recipes</h1>
             {myRecipes.length > 0 ? (
-              <table className="myRecipesComponent w-100 mt-4">
+              <table className="mt-4">
                 <thead>
                   <tr>
                     <th>Recipe Name</th>
