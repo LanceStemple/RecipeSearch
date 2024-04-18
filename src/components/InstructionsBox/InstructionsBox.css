@@ -2,7 +2,7 @@
     flex: 1;
     padding: 15px;
     margin-top: 10px;
-    font-size: 26px;
+    font-size: min(1.7vw, 23px);
     background: lightgray;
     text-align: left;
     overflow-y: auto;
@@ -12,6 +12,7 @@
     padding: 25px;
     background: #312509;
     height: 745px;
-    width: 510px;
+    width: 51vw;
+    max-width: 507px;
     text-align: center;
 }

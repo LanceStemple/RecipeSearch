@@ -2,7 +2,7 @@
     flex: 1;
     padding: 15px;
     margin-top: 10px;
-    font-size: 26px;
+    font-size: min(1.7vw, 23px);
     background: lightgray;
     text-align: left;
     overflow-y: auto;
@@ -11,8 +11,10 @@
 .outer-box {
     padding: 25px;
     background: #312509;
-    height: 745px;
-    width: 510px;
+    height: 74.5vh;
+    max-height: 745px;
+    width: 35vw;
+    max-width: 507px;
     text-align: center;
 }
   
@@ -20,5 +22,5 @@
     background: #357266;
     border-radius: 15px;
     border-color: transparent;
-    height: 80px;
+    height: 8vh;
 }

@@ -1,6 +1,7 @@
 .header{
     height: 175px;
     background-color: #0E3B43;
+    min-width: 1440px;
 }
 
 .header img{

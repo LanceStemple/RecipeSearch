@@ -10,8 +10,8 @@ function SearchBox({ headerText, left }) {
   const navigate = useNavigate();
 
   const marginValue = {
-    marginLeft: left ? "350px" : "50px",
-    marginRight: left ? "50px" : "350px",
+    marginLeft: left ? "min(15vw,350px)" : "min(5vw,50px)",
+    marginRight: left ? "min(5vw,50px)" : "min(15vw,350px)",
   };
 
   const handleSubmit = async (event) => {

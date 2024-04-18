@@ -1,22 +1,4 @@
 .headers {
-    font-size: 32px;
+    font-size: min(2.5vw, 32px);
     margin-bottom: 10px;
-}
-
-.outer-box {
-    padding: 25px;
-    background: #312509;
-    height: 745px;
-    width: 510px;
-    text-align: center;
-}
-  
-.inner-box {
-    flex: 1;
-    padding: 15px;
-    margin-top: 10px;
-    font-size: 26px;
-    background: lightgray;
-    text-align: left;
-    overflow-y: auto;
 }
