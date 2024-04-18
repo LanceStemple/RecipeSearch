@@ -1,17 +1,18 @@
 .header{
-    height: 175px;
+    height: 17.5vh;
+    min-height: min(16.4vw,134px);;
     background-color: #0E3B43;
-    min-width: 1440px;
+    width: 144vw;
 }
 
 .header img{
     margin-left: 2%;
-    width:134px;
-    height:134px;
+    width:min(13.4vw,134px);
+    height:min(13.4vw,134px);
 }
 
 .header h2{
-    font-size: 40px;
+    font-size: min(4vw, 40px);
     margin-left: 20px;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .header nav{
-    font-size: 32px;
+    font-size: min(3vw,32px);
     margin-right: 2%;
 }
 
