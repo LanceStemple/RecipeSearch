@@ -1,7 +1,7 @@
 import "./ResultsPage.css";
 
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header/Header.js";
 import { supabase } from "../../helper/supabaseClient.js";
@@ -45,6 +45,12 @@ function ResultsPage() {
     fetchData();
   }, [location.state, setUser]);
 
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/login`;
+    navigate(path);
+  };
+
   const saveRecipe = async (recipe_name, recipe_url, recipe_img) => {
     if (user) {
       const { data: existingRecipes, error } = await supabase
@@ -69,8 +75,7 @@ function ResultsPage() {
         user_id: user.id,
       });
     } else {
-      // Handle case when user is not signed in
-      // stuff about not being signed in here
+      routeChange();
     }
   };
 
