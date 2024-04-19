@@ -61,6 +61,7 @@ function MyRecipes() {
       .from("myRecipes")
       .select("*")
       .eq("user_id", userId);
+    res.data.sort((a, b) => a.recipe_name.localeCompare(b.recipe_name));
     setMyRecipes(res.data);
     setError(res.error);
   };
