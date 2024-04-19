@@ -39,6 +39,8 @@ function Popular() {
 
     res.data.sort((a, b) => b.count - a.count);
 
+    res.data = res.data.slice(0, 20);
+
     setPopularRecipes(res.data);
     setError(res.error);
   };
