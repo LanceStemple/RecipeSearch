@@ -27,7 +27,6 @@ function SearchBox({ headerText, left }) {
       countValue = 5;
       setCount(countValue);
     }
-    console.log(diet);
 
     setTimeout(async () => {
       const options = {
@@ -38,8 +37,6 @@ function SearchBox({ headerText, left }) {
         ...(mealType && { mealType: mealType }),
         ...(diet && { diet: diet }),
       };
-
-      console.warn(options);
 
       try {
         const result = await getRecipe(options);
@@ -59,7 +56,6 @@ function SearchBox({ headerText, left }) {
       body: JSON.stringify(options),
     });
     const result = await res.json();
-    console.warn(result);
     return result;
   }
 

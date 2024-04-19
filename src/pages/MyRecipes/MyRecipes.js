@@ -8,11 +8,8 @@ import { supabase } from "../../helper/supabaseClient.js";
 import { useUser } from "../../contexts/UserContext";
 
 function MyRecipes() {
-  // eslint-disable-next-line
   const { user, setUser } = useUser();
   const [myRecipes, setMyRecipes] = useState([]);
-
-  // eslint-disable-next-line
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -37,12 +34,16 @@ function MyRecipes() {
         }
       );
 
+      // Call getMyRecipes after setting the user session
+      if (session?.user) {
+        await getMyRecipes(session.user.id);
+      }
+
       return () => {
         authListener.unsubscribe();
       };
     };
     fetchData();
-    getMyRecipes();
   }, [setUser]);
 
   let navigate = useNavigate();
@@ -55,8 +56,11 @@ function MyRecipes() {
     await supabase.auth.signOut();
   };
 
-  const getMyRecipes = async () => {
-    const res = await supabase.from("myRecipes").select("*");
+  const getMyRecipes = async (userId) => {
+    const res = await supabase
+      .from("myRecipes")
+      .select("*")
+      .eq("user_id", userId);
     setMyRecipes(res.data);
     setError(res.error);
   };
@@ -68,7 +72,7 @@ function MyRecipes() {
       .eq("recipe_name", recipe_name)
       .single();
     if (!res.error) {
-      getMyRecipes();
+      await getMyRecipes(user.id);
     } else {
       setError(res.error);
     }

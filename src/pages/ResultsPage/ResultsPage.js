@@ -47,7 +47,6 @@ function ResultsPage() {
 
   const saveRecipe = async (recipe_name, recipe_url, recipe_img) => {
     if (user) {
-      // Check if the recipe already exists for the user
       const { data: existingRecipes, error } = await supabase
         .from("myRecipes")
         .select("*")
@@ -56,18 +55,13 @@ function ResultsPage() {
 
       if (error) {
         console.error("Error checking existing recipes:", error.message);
-        // Handle error appropriately
         return;
       }
 
-      // If there are existing recipes for the user with the same name, don't insert
       if (existingRecipes && existingRecipes.length > 0) {
-        console.log("Recipe already exists for this user.");
-        // Handle this case if needed
         return;
       }
 
-      // Insert the recipe if it doesn't exist for the user
       await supabase.from("myRecipes").insert({
         recipe_name: recipe_name,
         recipe_url: recipe_url,
