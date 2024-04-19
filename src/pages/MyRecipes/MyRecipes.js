@@ -10,6 +10,7 @@ import { useUser } from "../../contexts/UserContext";
 function MyRecipes() {
   const { user, setUser } = useUser();
   const [myRecipes, setMyRecipes] = useState([]);
+  // eslint-disable-next-line
   const [error, setError] = useState(null);
 
   useEffect(() => {
