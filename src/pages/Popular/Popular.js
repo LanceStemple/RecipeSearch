@@ -52,7 +52,7 @@ function Popular() {
         <div className="popular-recipes-component">
           <h1 className="text-decoration-underline mt-4">Popular Recipes</h1>
           {popularRecipes.length > 0 ? (
-            <table className="mt-4">
+            <table className="m-4">
               <thead>
                 <tr>
                   <th>Recipe Name</th>

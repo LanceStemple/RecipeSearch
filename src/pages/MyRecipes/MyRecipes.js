@@ -114,7 +114,10 @@ function MyRecipes() {
                         </a>
                       </td>
                       <td>
-                        <button onClick={() => handleDelete(value.recipe_name)}>
+                        <button
+                          className="delete-my-recipe-button"
+                          onClick={() => handleDelete(value.recipe_name)}
+                        >
                           Delete
                         </button>
                       </td>
@@ -134,7 +137,7 @@ function MyRecipes() {
         ) : (
           <div className="d-flex flex-column align-items-center">
             <h2>You don't seem to be logged in!</h2>
-            <button onClick={routeChange} className="btn btn-primary">
+            <button onClick={routeChange} className="delete-my-recipe-button">
               Login here
             </button>
           </div>

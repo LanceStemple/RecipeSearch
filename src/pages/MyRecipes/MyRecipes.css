@@ -22,3 +22,11 @@
     padding: 10px;
     border: 1px solid;
 }
+
+.delete-my-recipe-button{
+    background: #357266;
+    border-radius: 15px;
+    border-color: transparent;
+    color: white;
+    height: 8vh;
+}

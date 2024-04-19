@@ -22,3 +22,12 @@
     padding: 10px;
     border: 1px solid;
 }
+
+.save-to-my-recipes-button{
+    background: #357266;
+    border-radius: 15px;
+    border-color: transparent;
+    height: 15vh;
+    min-height: 125px;
+    color: white;
+}

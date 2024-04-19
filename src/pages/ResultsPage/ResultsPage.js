@@ -80,7 +80,7 @@ function ResultsPage() {
       <div className="results-component">
         <h1 className="text-decoration-underline mt-4">Results:</h1>
         {recipes.length > 0 ? (
-          <table className="mt-4 ms-4">
+          <table className="m-4">
             <thead>
               <tr>
                 <th>Label</th>
@@ -107,6 +107,7 @@ function ResultsPage() {
                   </td>
                   <td>
                     <button
+                      className="save-to-my-recipes-button"
                       onClick={() =>
                         saveRecipe(recipe.label, recipe.url, recipe.image)
                       }
