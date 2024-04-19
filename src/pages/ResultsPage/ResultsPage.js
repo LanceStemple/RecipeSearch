@@ -84,44 +84,48 @@ function ResultsPage() {
     <div>
       <Header headerText="Results" />
       <div className="results-component">
-        <table className="mt-4 ms-4">
-          <thead>
-            <tr>
-              <th>Label</th>
-              <th>Image</th>
-              <th>URL</th>
-              <th>My Recipes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {recipes.map((recipe, index) => (
-              <tr key={index}>
-                <td>{recipe.label}</td>
-                <td>
-                  <img src={recipe.image} alt="recipe"></img>
-                </td>
-                <td>
-                  <a
-                    href={recipe.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {recipe.url}
-                  </a>
-                </td>
-                <td>
-                  <button
-                    onClick={() =>
-                      saveRecipe(recipe.label, recipe.url, recipe.image)
-                    }
-                  >
-                    Save To My Recipes
-                  </button>
-                </td>
+        {recipes.length > 0 ? (
+          <table className="mt-4 ms-4">
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Image</th>
+                <th>URL</th>
+                <th>My Recipes</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {recipes.map((recipe, index) => (
+                <tr key={index}>
+                  <td>{recipe.label}</td>
+                  <td>
+                    <img src={recipe.image} alt="recipe"></img>
+                  </td>
+                  <td>
+                    <a
+                      href={recipe.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {recipe.url}
+                    </a>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() =>
+                        saveRecipe(recipe.label, recipe.url, recipe.image)
+                      }
+                    >
+                      Save To My Recipes
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <h2>No recipes found!</h2>
+        )}
       </div>
     </div>
   );

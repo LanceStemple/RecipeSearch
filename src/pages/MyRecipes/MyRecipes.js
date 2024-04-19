@@ -77,7 +77,7 @@ function MyRecipes() {
   return (
     <div>
       <Header headerText="My Recipes" activeNavItem="myRecipes" />
-      <div className="">
+      <div>
         {user ? (
           <div className="myRecipesComponent">
             <h1 className="text-decoration-underline">My Recipes</h1>

@@ -17,17 +17,26 @@ function SearchBox({ headerText, left }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const options = {
-      q: name,
-      to: count,
-    };
+    let countValue = parseInt(count);
 
-    try {
-      const result = await getRecipe(options);
-      navigate("/results", { state: { result } });
-    } catch (error) {
-      console.error("Error fetching recipe:", error);
+    if (countValue <= 0 || isNaN(countValue)) {
+      countValue = 5;
+      setCount(countValue);
     }
+
+    setTimeout(async () => {
+      const options = {
+        q: name,
+        to: countValue,
+      };
+
+      try {
+        const result = await getRecipe(options);
+        navigate("/results", { state: { result } });
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+      }
+    }, 100);
   };
 
   async function getRecipe(options) {
