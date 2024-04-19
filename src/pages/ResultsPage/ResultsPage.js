@@ -78,12 +78,13 @@ function ResultsPage() {
     <div>
       <Header headerText="Results" />
       <div className="results-component">
+        <h1 className="text-decoration-underline mt-4">Results:</h1>
         {recipes.length > 0 ? (
           <table className="mt-4 ms-4">
             <thead>
               <tr>
                 <th>Label</th>
-                <th>Image</th>
+                <th>Preview</th>
                 <th>URL</th>
                 <th>My Recipes</th>
               </tr>

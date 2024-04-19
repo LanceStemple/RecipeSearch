@@ -86,13 +86,13 @@ function MyRecipes() {
       <div>
         {user ? (
           <div className="my-recipes-component">
-            <h1 className="text-decoration-underline">My Recipes</h1>
+            <h1 className="text-decoration-underline mt-4">My Recipes</h1>
             {myRecipes.length > 0 ? (
               <table className="mt-4">
                 <thead>
                   <tr>
                     <th>Recipe Name</th>
-                    <th>Image</th>
+                    <th>Preview</th>
                     <th>Recipe URL</th>
                     <th>Action</th>
                   </tr>
@@ -125,7 +125,7 @@ function MyRecipes() {
             ) : (
               <h2>You don't have any recipes yet!</h2>
             )}
-            <div className="mt-auto mb-4">
+            <div className="mt-4 mb-4">
               <button onClick={() => logout()} className="btn btn-danger">
                 Logout
               </button>
