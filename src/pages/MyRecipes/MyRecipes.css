@@ -1,4 +1,4 @@
-.myRecipesComponent {
+.my-recipes-component {
     overflow-x: auto;
     max-width: 100%;
     width: min(100vw, calc(100% - 40px));
@@ -6,16 +6,16 @@
     text-align: center;
 }
 
-.myRecipesComponent img{
+.my-recipes-component img{
     width: min(20vw,200px);
     height: min(20vw,200px);
 }
 
-.myRecipesComponent table{
+.my-recipes-component table{
     font-size: min(2.4vw,24px);
     border-spacing: 50px;
 }
 
-.myRecipesComponent th, td { 
+.my-recipes-component th, td { 
     padding: 10px;
 }

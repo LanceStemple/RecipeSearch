@@ -47,7 +47,7 @@ function Popular() {
     <div>
       <Header headerText="Popular Recipes" activeNavItem="popular" />
       <div>
-        <div className="myRecipesComponent">
+        <div className="popular-recipes-component">
           <h1 className="text-decoration-underline">Popular Recipes</h1>
           {popularRecipes.length > 0 ? (
             <table className="mt-4">

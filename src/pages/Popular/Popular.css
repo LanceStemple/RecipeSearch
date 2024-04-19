@@ -1,0 +1,21 @@
+.popular-recipes-component {
+    overflow-x: auto;
+    max-width: 100%;
+    width: min(100vw, calc(100% - 40px));
+    margin: auto;
+    text-align: center;
+}
+
+.popular-recipes-component img{
+    width: min(20vw,200px);
+    height: min(20vw,200px);
+}
+
+.popular-recipes-component table{
+    font-size: min(2.4vw,24px);
+    border-spacing: 50px;
+}
+
+.popular-recipes-component th, td { 
+    padding: 10px;
+}

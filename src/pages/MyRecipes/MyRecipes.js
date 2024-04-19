@@ -84,7 +84,7 @@ function MyRecipes() {
       <Header headerText="My Recipes" activeNavItem="myRecipes" />
       <div>
         {user ? (
-          <div className="myRecipesComponent">
+          <div className="my-recipes-component">
             <h1 className="text-decoration-underline">My Recipes</h1>
             {myRecipes.length > 0 ? (
               <table className="mt-4">
