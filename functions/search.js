@@ -36,8 +36,6 @@ exports.handler = async (event) => {
     options.params.diet = diet;
   }
 
-  console.warn("HER IE ", options);
-
   const response = await axios.request(options);
   return {
     statusCode: 200,
