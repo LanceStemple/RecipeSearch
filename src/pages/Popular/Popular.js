@@ -56,7 +56,6 @@ function Popular() {
               <thead>
                 <tr>
                   <th>Recipe Name</th>
-                  <th>Preview</th>
                   <th>Recipe URL</th>
                   <th>Number of Saves</th>
                 </tr>
@@ -65,9 +64,6 @@ function Popular() {
                 {popularRecipes.map((value, index) => (
                   <tr key={index}>
                     <td>{value.recipe_name}</td>
-                    <td>
-                      <img alt="recipe" src={value.recipe_img}></img>
-                    </td>
                     <td>
                       <a
                         href={value.recipe_url}

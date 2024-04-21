@@ -92,7 +92,6 @@ function MyRecipes() {
                 <thead>
                   <tr>
                     <th>Recipe Name</th>
-                    <th>Preview</th>
                     <th>Recipe URL</th>
                     <th>Action</th>
                   </tr>
@@ -101,9 +100,6 @@ function MyRecipes() {
                   {myRecipes.map((value, index) => (
                     <tr key={index}>
                       <td>{value.recipe_name}</td>
-                      <td>
-                        <img alt="recipe" src={value.recipe_img}></img>
-                      </td>
                       <td>
                         <a
                           href={value.recipe_url}
