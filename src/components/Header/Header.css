@@ -9,6 +9,7 @@
     margin-left: 2%;
     width:min(13.4vw,134px);
     height:min(13.4vw,134px);
+    cursor: pointer;
 }
 
 .header h2{

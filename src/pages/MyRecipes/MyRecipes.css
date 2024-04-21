@@ -30,3 +30,7 @@
     color: white;
     height: 8vh;
 }
+
+.delete-my-recipe-button:hover{
+    background: #2E583E;
+}

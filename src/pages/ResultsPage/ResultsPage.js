@@ -125,7 +125,15 @@ function ResultsPage() {
             </tbody>
           </table>
         ) : (
-          <h2>No recipes found!</h2>
+          <div>
+            <h2>No recipes found!</h2>
+            <button
+              className="save-to-my-recipes-button"
+              onClick={() => navigate("/")}
+            >
+              Back to Search
+            </button>
+          </div>
         )}
       </div>
     </div>

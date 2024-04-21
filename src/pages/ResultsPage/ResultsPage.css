@@ -31,3 +31,7 @@
     min-height: 125px;
     color: white;
 }
+
+.save-to-my-recipes-button:hover{
+    background: #2E583E;
+}
