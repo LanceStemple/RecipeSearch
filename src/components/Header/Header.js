@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import "./Header.css";
 
-import logo from "../../assets/Ellipse 1.png";
+import logo from "../../assets/logo.png";
 
 function Header({ activeNavItem, headerText }) {
   let navigate = useNavigate();
